@@ -1,15 +1,17 @@
 import Image from "next/image";
 import React from "react";
-import aboutUsImage from "@/assests/about.jpg";
+import aboutUsImage from "@/assests/about.png";
 import bin from "@/assests/bin.jpg";
 
 const AboutUs = () => {
   return (
-    <div className="container mx-auto h-90">
-      <h1 className="text-5xl my-10 font-bold">About Us</h1>
+    <div className="container mx-auto h-screen">
+      <h1 className="text-2xl text-green-500 md:text-4xl lg:text-5xl py-10 font-bold">
+        About Us
+      </h1>
       <div className="flex flex-col lg:flex-row justify-between items-center">
-        <div className="flex-1 lg:pr-60">
-          <h1 className="text-4xl font-semibold py-2 md:py-4 lg:py-6">
+        <div className="flex-1 lg:pr-10 xl:pr-60">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold py-2 md:py-4 lg:py-6">
             Providing A Regular Trash Collection On A Scheduled Time Or Call In
             Service.
           </h1>
@@ -39,14 +41,13 @@ const AboutUs = () => {
         </div>
         <div className="flex-1 relative">
           <Image
-            className="rounded-2xl"
+            className="md:rounded-2xl"
             src={aboutUsImage}
-            layout="responsive"
             width={1920}
             height={1080}
             alt="about us image"
           />
-          <div className="hidden lg:block absolute bottom-5 -left-28 ">
+          <div className="hidden xl:block absolute bottom-5 -left-20 ">
             <Image
               className="rounded-2xl "
               src={bin}
