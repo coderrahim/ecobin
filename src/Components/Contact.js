@@ -22,7 +22,7 @@ const Contact = () => {
            
             </div>
             <div className="flex justify-center items-center mt-8">
-            <button className="bg-green-500 px-5 py-2 rounded-md">submit</button>
+            <button className="bg-green-500 px-5 py-2 text-white rounded-md">submit</button>
             </div>
            
 
