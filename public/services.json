@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "image": "https://images.pexels.com/photos/2827735/pexels-photo-2827735.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "description": "Waste Bin Monitoring - Utilize advanced sensors and monitoring technology to keep track of waste bin fill levels in real-time. Optimize waste collection schedules and reduce operational costs by efficiently managing waste disposal.",
+    "serviceName": "Waste Bin Monitoring Service"
+  },
+  {
+    "id": 2,
+    "image": "https://images.pexels.com/photos/2827735/pexels-photo-2827735.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "description": "Smart Recycling Systems - Implement intelligent recycling systems that use AI-driven sorting mechanisms to enhance recycling efficiency. Encourage sustainable practices and contribute to a greener environment.",
+    "serviceName": "Smart Recycling Systems"
+  },
+  {
+    "id": 3,
+    "image": "https://images.pexels.com/photos/2827735/pexels-photo-2827735.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "description": "Real-time Data Analytics - Harness the power of real-time data analytics to gain valuable insights into waste management processes. Monitor and analyze data to make informed decisions, optimize workflows, and improve overall efficiency.",
+    "serviceName": "Real-time Waste Data Analytics"
+  },
+  {
+    "id": 4,
+    "image": "https://images.pexels.com/photos/2827735/pexels-photo-2827735.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "description": "Route Optimization for Collection - Implement route optimization algorithms to streamline waste collection routes. Minimize travel time, reduce fuel consumption, and enhance the overall effectiveness of waste collection services.",
+    "serviceName": "Route Optimization for Waste Collection"
+  },
+  {
+    "id": 5,
+    "image": "https://images.pexels.com/photos/2827735/pexels-photo-2827735.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "description": "Environmental Impact Assessment - Conduct comprehensive environmental impact assessments to understand the ecological consequences of waste management practices. Develop sustainable strategies to minimize environmental impact.",
+    "serviceName": "Environmental Impact Assessment Service"
+  }
+]
