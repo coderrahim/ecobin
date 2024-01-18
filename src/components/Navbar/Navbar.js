@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useState } from "react";
 
 const Navbar = () => {
@@ -90,15 +91,15 @@ const Navbar = () => {
                                 </a>
                             </li>
                             <li role="none" className="flex items-stretch">
-                                <a
+                                <Link
+                                    href={"/aboutUs"}
                                     role="menuitem"
                                     aria-current="page"
                                     aria-haspopup="false"
                                     className="flex items-center gap-2 py-4 text-emerald-500 transition-colors duration-300 hover:text-emerald-600 focus:text-emerald-600 focus:outline-none focus-visible:outline-none lg:px-8"
-                                    href="javascript:void(0)"
                                 >
                                     <span>About Us</span>
-                                </a>
+                                </Link>
                             </li>
                             <li role="none" className="flex items-stretch">
                                 <a
