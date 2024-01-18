@@ -1,3 +1,4 @@
+"use client"
 import React from 'react';
 import styled from 'styled-components';
 
@@ -13,7 +14,7 @@ const GalleryItem = styled.img`
   border-radius: 8px;
 `;
 
-const Gallery = ({ images }) => {
+const GallerySection = ({ images }) => {
   return (
     <GalleryContainer>
       {images.map((imageUrl, index) => (
@@ -23,4 +24,4 @@ const Gallery = ({ images }) => {
   );
 };
 
-export default Gallery;
+export default GallerySection;
