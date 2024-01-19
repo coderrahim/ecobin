@@ -15,11 +15,9 @@ const Contact = () => {
                             <input type="number" placeholder="Your Number" className="input block input-bordered  lg:w-[450px] md:w-[450px] w-[200px]" />
                         </div>
                         <div className="mt-12">
-                            <input type="text" placeholder="Type Your Location" className="input block input-bordered mb-6 lg:w-[450px] md:w-[450px] w-[200px]" />
+                            <input type="text" placeholder="Type Your Location" className="input block mb-6 input-bordered lg:w-[450px] md:w-[450px] w-[200px]" />
                             <textarea className="textarea textarea-bordered lg:w-[450px] md:w-[450px] w-[200px] block mb-8" placeholder="How can we help you? "></textarea>
-
                         </div>
-
                     </div>
                     <div className="flex justify-center items-center mt-8">
                         <button className="bg-green-500 px-5 py-2 text-white rounded-md">submit</button>
