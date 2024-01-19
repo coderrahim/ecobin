@@ -5,7 +5,7 @@ import React from 'react';
 const page = () => {
   return (
     <div>
-      <h2>Hello Developer.</h2>
+      <h2 className='max-w-7xl mx-auto'>Hello Developer.</h2>
       <Gallery></Gallery>
       
     </div>
