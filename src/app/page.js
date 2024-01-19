@@ -1,14 +1,14 @@
-import Services from '@/components/Services/Services';
-import Footer from '@/components/Footer/Footer';
-import Navbar from '@/components/Navbar/Navbar';
+// import Footer from '@/components/Footer/Footer';
+// import Navbar from '@/components/Navbar/Navbar';
+import Services from '@/Components/Services/Services';
 import React from 'react';
 
 const HomePage = () => {
   return (
     <div>
-      <Navbar></Navbar>
+      {/* <Navbar></Navbar> */}
       <Services></Services>
-      <Footer></Footer>
+      {/* <Footer></Footer> */}
     </div>
   )
 }

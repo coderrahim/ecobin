@@ -3,6 +3,10 @@ import React from "react";
 import aboutUsImage from "@/assests/about.png";
 import bin from "@/assests/bin.jpg";
 
+export const metadata = {
+  title: 'EcoBin - About Us',
+}
+
 const AboutUs = () => {
   return (
     <div className="container mx-auto h-screen">

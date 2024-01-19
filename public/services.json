@@ -1,32 +1,38 @@
 [
   {
     "id": 1,
-    "image": "https://images.pexels.com/photos/2827735/pexels-photo-2827735.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "description": "Waste Bin Monitoring - Utilize advanced sensors and monitoring technology to keep track of waste bin fill levels in real-time. Optimize waste collection schedules and reduce operational costs by efficiently managing waste disposal.",
-    "serviceName": "Waste Bin Monitoring Service"
+    "image": "https://images.pexels.com/photos/2489/street-building-construction-industry.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "description": "Efficiently manage construction waste with our Waste Bin Monitoring system. Utilize advanced sensors and monitoring technology to track waste bin fill levels in real-time. Optimize waste collection schedules and reduce operational costs",
+    "serviceName": "Construction"
   },
   {
     "id": 2,
-    "image": "https://images.pexels.com/photos/2827735/pexels-photo-2827735.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "description": "Smart Recycling Systems - Implement intelligent recycling systems that use AI-driven sorting mechanisms to enhance recycling efficiency. Encourage sustainable practices and contribute to a greener environment.",
-    "serviceName": "Smart Recycling Systems"
+    "image": "https://images.pexels.com/photos/2967770/pexels-photo-2967770.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "description": "Foster sustainability in commercial spaces with our Smart Recycling Systems. Implement intelligent recycling systems featuring AI-driven sorting mechanisms to enhance recycling efficiency. Encourage and contribute to a greener environment through smart waste management",
+    "serviceName": "Commertial"
   },
   {
     "id": 3,
-    "image": "https://images.pexels.com/photos/2827735/pexels-photo-2827735.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "description": "Real-time Data Analytics - Harness the power of real-time data analytics to gain valuable insights into waste management processes. Monitor and analyze data to make informed decisions, optimize workflows, and improve overall efficiency.",
-    "serviceName": "Real-time Waste Data Analytics"
+    "image": "https://images.pexels.com/photos/5023591/pexels-photo-5023591.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "description": "Elevate residential waste management with Real-time Data Analytics. Harness the power of real-time data analytics to gain valuable insights into waste management processes. Monitor and analyze data for informed decisions, optimized workflows, and improved overall efficiency",
+    "serviceName": "Residential"
   },
   {
     "id": 4,
-    "image": "https://images.pexels.com/photos/2827735/pexels-photo-2827735.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "description": "Route Optimization for Collection - Implement route optimization algorithms to streamline waste collection routes. Minimize travel time, reduce fuel consumption, and enhance the overall effectiveness of waste collection services.",
-    "serviceName": "Route Optimization for Waste Collection"
+    "image": "https://images.pexels.com/photos/2949748/pexels-photo-2949748.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "description": "Optimize waste collection routes for Portable Toilets. Implement route optimization algorithms to streamline collection routes, minimizing travel time, reducing fuel consumption, and enhancing the overall effectiveness of waste collection services",
+    "serviceName": "Portable Toilets"
   },
   {
     "id": 5,
-    "image": "https://images.pexels.com/photos/2827735/pexels-photo-2827735.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "description": "Environmental Impact Assessment - Conduct comprehensive environmental impact assessments to understand the ecological consequences of waste management practices. Develop sustainable strategies to minimize environmental impact.",
-    "serviceName": "Environmental Impact Assessment Service"
+    "image": "https://images.pexels.com/photos/906494/pexels-photo-906494.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "description": "Assess and minimize the Environmental Impact of waste management with Storage Containers. Conduct comprehensive environmental impact assessments to understand ecological consequences. Develop sustainable strategies to minimize environmental impact and ensure responsible waste management",
+    "serviceName": "Storage Containers"
+  },
+  {
+    "id": 6,
+    "image": "https://images.pexels.com/photos/938045/pexels-photo-938045.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "description": "Manage official waste responsibly with our Environmental Impact Assessment. Conduct comprehensive assessments to understand the ecological consequences of waste management practices. Develop and implement sustainable strategies to minimize environmental impact in official waste disposal",
+    "serviceName": "Official Waste"
   }
 ]

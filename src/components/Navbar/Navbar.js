@@ -1,9 +1,11 @@
 "use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const Navbar = () => {
-    const [isToggleOpen, setIsToggleOpen] = useState(false)
+    const [isToggleOpen, setIsToggleOpen] = useState(false);
+    const path = usePathname();
     return (
         <div>
             <header className="border-b-1 relative z-20 w-full border-b border-slate-200 bg-white/90 shadow-lg shadow-slate-700/5 after:absolute after:top-full after:left-0 after:z-10 after:block after:h-px after:w-full after:bg-slate-200 lg:border-slate-200 lg:backdrop-blur-sm lg:after:hidden">
@@ -76,19 +78,19 @@ const Navbar = () => {
                             role="menubar"
                             aria-label="Select page"
                             className={`absolute top-0 left-0 z-[-1] h-[28.5rem] w-full justify-center overflow-hidden  overflow-y-auto overscroll-contain bg-white/90 px-8 pb-12 pt-24 font-medium transition-[opacity,visibility] duration-300 lg:visible lg:relative lg:top-0  lg:z-0 lg:flex lg:h-full lg:w-auto lg:items-stretch lg:overflow-visible lg:bg-white/0 lg:px-0 lg:py-0  lg:pt-0 lg:opacity-100 ${isToggleOpen
-                                    ? "visible opacity-100 backdrop-blur-sm"
-                                    : "invisible opacity-0"
+                                ? "visible opacity-100 backdrop-blur-sm"
+                                : "invisible opacity-0"
                                 }`}
                         >
                             <li role="none" className="flex items-stretch">
-                                <a
+                                <Link
+                                    href={"/"}
                                     role="menuitem"
                                     aria-haspopup="false"
-                                    className="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-emerald-500 focus:text-emerald-600 focus:outline-none focus-visible:outline-none lg:px-8"
-                                    href="javascript:void(0)"
+                                    className={`flex items-center gap-2 py-4 transition-colors duration-300 hover:text-emerald-500 focus:text-emerald-600 focus:outline-none focus-visible:outline-none lg:px-8 ${path === "/" ? "text-emerald-500" : ""}`}
                                 >
                                     <span>Home</span>
-                                </a>
+                                </Link>
                             </li>
                             <li role="none" className="flex items-stretch">
                                 <Link
@@ -96,20 +98,20 @@ const Navbar = () => {
                                     role="menuitem"
                                     aria-current="page"
                                     aria-haspopup="false"
-                                    className="flex items-center gap-2 py-4 text-emerald-500 transition-colors duration-300 hover:text-emerald-600 focus:text-emerald-600 focus:outline-none focus-visible:outline-none lg:px-8"
+                                    className={`flex items-center gap-2 py-4 transition-colors duration-300 hover:text-emerald-600 focus:text-emerald-600 focus:outline-none focus-visible:outline-none lg:px-8 ${path === "/aboutUs" ? "text-emerald-500" : ""}`}
                                 >
                                     <span>About Us</span>
                                 </Link>
                             </li>
                             <li role="none" className="flex items-stretch">
-                                <a
+                                <Link
+                                    href={"/contactUs"}
                                     role="menuitem"
                                     aria-haspopup="false"
-                                    className="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-emerald-500 focus:text-emerald-600 focus:outline-none focus-visible:outline-none lg:px-8"
-                                    href="javascript:void(0)"
+                                    className={`flex items-center gap-2 py-4 transition-colors duration-300 hover:text-emerald-500 focus:text-emerald-600 focus:outline-none focus-visible:outline-none lg:px-8 ${path === "/contactUs" ? "text-emerald-500" : ""}`}
                                 >
                                     <span>Contact Us</span>
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                         <div className="ml-auto flex items-center px-6 lg:ml-0 lg:p-0">
