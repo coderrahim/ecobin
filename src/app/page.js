@@ -1,11 +1,7 @@
-// import Footer from '@/components/Footer/Footer';
-// import Navbar from '@/components/Navbar/Navbar';
-import Services from '@/Components/Services/Services';
-// import Footer from '@/components/Footer/Footer';
-// import Navbar from '@/components/Navbar/Navbar';
-import Banner from '@/Components/Banner/Banner';
-import Gallery from '@/Components/Gallery/Gallery';
-// import styled from 'styled-components';
+
+import Services from '../Components/Services/Services';
+import Banner from '../Components/Banner/Banner';
+import Gallery from '../Components/Gallery/Gallery';
 
 const HomePage = () => {
   return (
