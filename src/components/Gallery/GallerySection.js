@@ -22,10 +22,10 @@ const GallerySection = ({ images }) => {
     //     <GalleryItem className='hover:' key={index} src={imageUrl} alt={`Gallery Item ${index + 1}`} />
     //   ))}
     // </GalleryContainer>
-    <div className='grid grid-cols-2 gap-5'>
+    <div className='grid grid-cols-1 md:grid-cols-2 gap-5 '>
       {images.map((imageUrl, index) => (
         <div key={index}>
-          <Image src={imageUrl} height={0} width={0} style={{ width: '100%', height: '300px' }} sizes="100vw" alt=''></Image>
+          <Image className='rounded-lg' src={imageUrl} height={0} width={0} style={{ width: '100%', height: '100%' }} sizes="100vw" alt=''></Image>
         </div>
       ))}
     </div>
