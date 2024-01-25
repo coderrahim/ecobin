@@ -11,14 +11,18 @@ const Login = () => {
       return (
         <>
           <h1 className="text-2xl">{session?.user?.name}</h1> <br />
-          <button onClick={() => signOut()}>Sign out</button>
+          <button className="btn" onClick={() => signOut()}>
+            Sign out
+          </button>
         </>
       );
     }
     return (
       <>
         <h1 className="text-2xl">Not signed in</h1> <br />
-        <button onClick={() => signIn()}>Sign in</button>
+        <button className="btn" onClick={() => signIn()}>
+          Sign in
+        </button>
       </>
     );
   }
