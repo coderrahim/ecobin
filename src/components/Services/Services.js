@@ -6,6 +6,7 @@ import services from "../../../public/services.json"
 const Services = () => {
     return (
         <div className='max-w-7xl mx-auto px-2 mb-20'>
+            {/* dd */}
             <h1 className="text-green-500 text-4xl lg:text-5xl py-10 font-bold text-center">Services</h1>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-5'>
                 {
