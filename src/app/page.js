@@ -1,14 +1,20 @@
-import Footer from '@/components/Footer/Footer';
-import Navbar from '@/components/Navbar/Navbar';
-import React from 'react';
+
+import Services from '../Components/Services/Services';
+import Banner from '../Components/Banner/Banner';
+import Gallery from '../Components/Gallery/Gallery';
+import LiveChat from '../Components/LiveChat/LiveChat';
+import GoogleMap from '@/Components/GoogleMap/GoogleMap';
 
 const HomePage = () => {
   return (
     <div>
-      <Navbar></Navbar>
-      <Footer></Footer>
+      <Banner></Banner>
+      <Services></Services>
+      <Gallery></Gallery>
+      <GoogleMap></GoogleMap>
+      <LiveChat></LiveChat>
     </div>
-  );
-};
-
+  )
+}
 export default HomePage;
+
