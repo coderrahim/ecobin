@@ -1,6 +1,9 @@
-import Footer from "@/components/Footer/Footer";
-import Header from "@/components/Header/Header";
-import Navbar from "@/components/Navbar/Navbar";
+
+import Footer from "@/Components/Footer/Footer";
+import Header from "@/Components/Header/Header";
+import Navbar from "@/Components/Navbar/Navbar";
+
+
 
 const UserSideLayout = ({ children }) => {
     return (

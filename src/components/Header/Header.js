@@ -11,7 +11,8 @@ import { useEffect, useState } from "react";
 const Header = () => {
 
     const { status } = useSession();
-    console.log(status);
+    
+
     const [mode,setmode] = useState("light");
     function themechange(){
      const html = document.documentElement
