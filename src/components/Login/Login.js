@@ -3,33 +3,55 @@
 import { Player } from '@lottiefiles/react-lottie-player';
 import Link from 'next/link';
 import { FcGoogle } from "react-icons/fc";
-import { signIn } from 'next-auth/react';
-import { useState } from 'react';
+import { signIn, useSession } from 'next-auth/react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import axios from 'axios';
 
 const Login = () => {
 
     const [error, setError] = useState(null);
     const router = useRouter();
 
+    const { data: session, status } = useSession();
+    // console.log(session);
+
+    useEffect(() => {
+        if (status === 'authenticated' && session.user.userstatus === "user") {
+            router.replace('/') // Redirect to dashboard after successful sign-in
+        }
+        else if(status === 'authenticated' && session.user.userstatus === "admin"){
+            router.replace("/admin")
+        }
+    }, [status, router, session?.user.userstatus])
+
     const handleUserLogin = async (event) => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
-        try {
-            const res = await signIn("credentials", {
-                email, password, redirect: false
-            })
-            if (res.error) {
-                setError("Invalid Credentials");
-                return;
-            }
-            router.replace("/");
-        } catch (error) {
-            console.log(error);
-        }
+        await signIn("credentials", {
+            email, password, redirect: false
+        });
+        // console.log(email, password);
+        // try {
+        // const { data } = await axios.get(`/api/register?email=${email}`);
+        // if (data && data.userstatus === "user") {
+        //     await signIn("credentials", {
+        //         email, password, redirect: false
+        //     });
+        //     router.replace("/");
+        // } else if (data && data.userstatus === "admin") {
+        //     await signIn("credentials", {
+        //         email, password, redirect: false
+        //     });
+        //     router.replace("/admin");
+        // } else {
+        //     setError("Invalid Credentials");
+        // }
+        // } catch (error) {
+        //     console.log(error);
+        // }
     }
 
     return (

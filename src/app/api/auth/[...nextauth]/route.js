@@ -3,10 +3,10 @@ import User from "@/utils/models/user";
 import NextAuth from "next-auth/next";
 import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
-import { redirect } from "next/navigation";
 import bcryptjs from "bcryptjs"
+import { useRouter } from "next/navigation";
 
-const authOptions = {
+export const authOptions = {
     providers: [
         CredentialsProvider({
             name: "credentials",
@@ -43,38 +43,63 @@ const authOptions = {
     },
     callbacks: {
         async signIn({ user, account }) {
-            // console.log("User ", user);
-            // console.log("Account", account);
             if (account.provider === "google") {
-                const { name, email } = user;
+                const { name, email, image } = user;
                 try {
                     await connectDB();
                     const userExist = await User.findOne({ email });
                     if (!userExist) {
-                        const res = await fetch("http://localhost:3000/api/user", {
-                            method: "POST",
-                            headers: {
-                                "Content-Type": "application/json"
-                            },
-                            body: JSON.stringify({
-                                fullname: name,
-                                email
-                            })
-                        })
+                        const res = await User.create({ fullname: name, email, profilepicture: image, userstatus: "user" });
                         if (res.ok) {
                             console.log(res);
-                            return user
+                            // return router.replace("/")
                         }
                     }
-                    else {
-                        // return redirect("/")
-                        // "/";
-                    }
+                    // if (!userExist) {
+                    //     const newUser = await User.create({ fullname: name, email, profilepicture: image, userstatus: "user" });
+                    //     if (newUser) {
+                    //         return "/"; // Redirect to homepage
+                    //     }
+                    // } else {
+                    //     if (userExist.userstatus === "user") {
+                    //         return "/"; // Redirect to homepage
+                    //     } else if (userExist.userstatus === "admin") {
+                    //         return "/admin"; // Redirect to admin dashboard
+                    //     }
+                    // }
                 } catch (error) {
                     console.log(error);
                 }
             }
             return user;
+        },
+        async jwt({ token, user, account, profile }) {
+            // console.log('token', token);
+            // console.log(profile);
+            if (user?._id) token._id = user._id;
+            if (account?.provider === 'google' && profile) {
+                token.name = profile.name;
+                token.image = profile.picture;
+                if (user && user.email) {
+                    const userdata = await User.findOne({ email: user.email });
+                    if (userdata) {
+                        token.userstatus = userdata.userstatus;
+                        token._id = userdata._id;
+                    }
+                }
+            } else if (account?.provider === 'credentials' && user) {
+                token.name = user.fullname;
+                token.image = user.profilepicture;
+                token.userstatus = user.userstatus;
+            }
+            return token;
+        },
+        async session({ session, token }) {
+            if (token?._id) session.user._id = token._id;
+            if (token?.name) session.user.name = token.name;
+            if (token?.image) session.user.image = token.image;
+            if (token?.userstatus) session.user.userstatus = token.userstatus;
+            return session;
         }
     }
 }

@@ -6,11 +6,15 @@ import { BsEnvelopeFill } from "react-icons/bs";
 import { BsFillPersonFill } from "react-icons/bs";
 import { useSession } from "next-auth/react";
 import { signOut } from "next-auth/react";
+import { useRouter } from "next/navigation";
+import { AiOutlineProfile } from "react-icons/ai";
 
 const Header = () => {
 
     const { status } = useSession();
-    console.log(status);
+    // console.log(status);
+
+    const router = useRouter();
 
     return (
         <div className="flex items-center w-full">
@@ -23,7 +27,22 @@ const Header = () => {
                         status === "loading" ? <span className="loading loading-ring loading-xs"></span> : (status === "authenticated" ?
                             <>
                                 {/* <li><Link href="/userprofile"><div className="flex items-center gap-2"><BsFillPersonFill></BsFillPersonFill>My Profile</div></Link></li> */}
-                                <li><button onClick={() => signOut()}><div className="flex items-center gap-2"><BsFillPersonFill></BsFillPersonFill>Logout</div></button></li>
+                                <li>
+                                    <div className="dropdown dropdown-end">
+                                        <button><div className="flex items-center gap-2"><BsFillPersonFill></BsFillPersonFill>My Profile</div></button>
+                                        <div className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-md border w-52 mt-2 text-black">
+                                            <div>
+                                                <div className="flex items-center justify-between">
+                                                    <p className="font-semibold text-black">Administrator</p>
+                                                    <Link href={"/admin"}><h1 className="font-bold text-[#006f51]">Dashboard</h1></Link>
+                                                </div>
+                                                <div className="divider w-full"></div>
+                                            </div>
+                                            <Link href={"/userprofile"}><button className="flex items-center gap-2 mb-5 font-bold"><AiOutlineProfile className="text-lg"></AiOutlineProfile> Go to profile</button></Link>
+                                            <button onClick={() => signOut()} className="btn w-full bg-red-600 text-white">Logout</button>
+                                        </div>
+                                    </div>
+                                </li>
                             </>
                             :
                             <li><Link href="/login"><div className="flex items-center gap-2"><BsFillPersonFill></BsFillPersonFill>Login | Signup</div></Link></li>)

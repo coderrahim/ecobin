@@ -2,14 +2,29 @@
 
 import { Player } from "@lottiefiles/react-lottie-player";
 import axios from "axios";
-import { signIn } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 import { FcGoogle } from "react-icons/fc";
 
 const Register = () => {
 
+    const imgbbKey = process.env.NEXT_PUBLIC_VITE_imagebb_key;
+    const imgbbAPI = `https://api.imgbb.com/1/upload?key=${imgbbKey}`;
+
     const router = useRouter();
+
+    const { data: session, status } = useSession();
+
+    useEffect(() => {
+        if (status === 'authenticated' && session.user.userstatus === "user") {
+            router.replace('/') // Redirect to dashboard after successful sign-in
+        }
+        else if (status === 'authenticated' && session.user.userstatus === "admin") {
+            router.replace("/admin")
+        }
+    }, [status, router, session?.user.userstatus])
 
     const handleUserRegister = async (event) => {
         event.preventDefault();
@@ -17,13 +32,22 @@ const Register = () => {
         const fullname = form.fullname.value;
         const email = form.email.value;
         const password = form.password.value;
-        // console.log(fullname, email, password);
-        const user = { fullname, email, password }
-        const res = await axios.post("/api/register", user);
-        if (res.status === 200 || res.status === 201) {
-            console.log("user added successfully");
-            form.reset();
-            router.push("/login");
+        const imagefile = { image: form.profilepicture.files[0] };
+        const ress = await axios.post(imgbbAPI, imagefile, {
+            headers: {
+                "content-type": "multipart/form-data"
+            }
+        });
+        if (ress.data.success) {
+            const profilepicture = ress.data.data.display_url.toString();
+            // console.log(fullname, email, password, profilepicture);
+            const user = { fullname, email, password, profilepicture, userstatus: "user" }
+            const res = await axios.post("/api/register", user);
+            if (res.status === 200 || res.status === 201) {
+                console.log("user added successfully");
+                form.reset();
+                router.push("/login");
+            }
         }
     }
 
@@ -48,6 +72,7 @@ const Register = () => {
                     <input name="fullname" type="text" placeholder="Full Name" className="input input-bordered w-full focus:outline-none rounded" required />
                     <input name="email" type="email" placeholder="Email address" className="input input-bordered w-full focus:outline-none rounded" required />
                     <input name="password" type="password" placeholder="Password" className="input input-bordered w-full focus:outline-none rounded" required />
+                    <input name="profilepicture" type="file" accept="image/*" className="file-input file-input-bordered w-full rounded focus:border-none" required />
                     <input className="btn h-14 bg-green-600 text-white w-full text-lg rounded" type="submit" value="Register" />
                 </form>
                 <div className="flex justify-center mt-4">

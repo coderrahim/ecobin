@@ -3,10 +3,10 @@ import mongoose from "mongoose";
 export const connectDB = async () => {
     try{
         await mongoose.connect(process.env.DB_CONNECTION_URL, {
-            dbName: 'ecobin'
+            dbName: 'EcoBin'
         });
-        console.log("ecobin db connected with mongodb");
+        console.log("EcoBin project connected with mongodb");
     }catch(error){
-        console.log("error connecting with database of ecobin ", error);
+        console.log("got error while connecting with database of EcoBin ", error);
     }
 }
