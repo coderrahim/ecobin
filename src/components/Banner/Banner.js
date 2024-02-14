@@ -12,12 +12,12 @@ const Banner = () => {
                     Waste Connections<br></br>
                     Garbage Pickup
                 </h1>
-                <p className="text-xl">Home and business waste management services and dumpster rentals.</p>
+                <p className="text-xl dark:text-[#00416d]">Home and business waste management services and dumpster rentals.</p>
                 <div className="flex items-center gap-4 pt-5">
                     <button className="btn bg-green-600 text-white text-lg font-bold">Start Service</button>
                     <button className="btn btn-outline border-[#00416d] text-[#00416d] text-lg font-bold">Request Query</button>
                 </div>
-                <div className="flex items-center gap-2 text-[#00416d] font-bold"><FaPhoneAlt></FaPhoneAlt> <span className="mb-1">+8801920382131</span></div>
+                <div className="flex items-center gap-2 text-[#00416d] font-bold"><FaPhoneAlt></FaPhoneAlt> <span className="mb-1 ">+8801920382131</span></div>
                 <div className="pt-10">
                     <BannerOptions></BannerOptions>
                 </div>
