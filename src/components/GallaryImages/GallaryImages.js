@@ -17,8 +17,12 @@ const images = [
 
 const GallaryImages = () => {
     return (
-        <div className='bg-gradient-to-b from-green-50 to-green-100 py-12'>
-            <h1 className='my-10 text-3xl text-center font-medium'>Our Recent <span className='bg-green-300 px-4 rounded'>Works</span> </h1>
+        <div className='py-12'>
+            <div className="space-y-2 text-center lg:w-1/2 md:w-1/2 w-2/3 flex flex-col justify-center mx-auto mb-20">
+                <p className="text-green-600 font-medium lg:mt-0 md:mt-5 mt-5" data-aos="fade-down">Shaping Tomorrow's Sustainability</p>
+                <h1 className="text-3xl font-semibold dark:text-white" data-aos="fade-up">Our Recent Works</h1>
+                <p className="text-xs dark:text-white" data-aos="zoom-in">Discover our latest projects driving positive change in waste management. From innovative tech solutions to community initiatives, we're committed to a cleaner, greener future. Join us in our journey towards responsible waste practices and a more sustainable world.</p>
+            </div>
             <Swiper
                 modules={[EffectCoverflow, Navigation, Autoplay]} effect="coverflow"
                 spaceBetween={50}
