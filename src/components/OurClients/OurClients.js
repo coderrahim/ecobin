@@ -4,7 +4,7 @@ import Marquee from 'react-fast-marquee';
 
 const OurClients = () => {
     return (
-        <div className='my-20'>
+        <div className='my-20 lg:mx-0 md:mx-10 mx-5'>
             <div className="space-y-2 text-center lg:w-1/2 md:w-1/2 w-2/3 flex flex-col justify-center mx-auto mb-10">
                 <p className="text-green-600 font-medium lg:mt-0 md:mt-5 mt-5" data-aos="fade-down">Sustainable Partnerships</p>
                 <h1 className="text-3xl font-semibold dark:text-white" data-aos="fade-up">Our Valuable Clients</h1>
@@ -26,8 +26,8 @@ const OurClients = () => {
                     alt="Clients"
                     className='ml-10'
                 ></Image>
-                
-                
+
+
                 <Image
                     src="https://i.ibb.co/BnDK6pp/bjaj.png"
                     width={200}
