@@ -41,7 +41,8 @@ const bookSchema = new Schema(
         customercost: {
             type: Number,
             required: true
-        }
+        },
+        status: String
     }
 )
 

@@ -36,11 +36,12 @@ const ServiceDetails = ({ id }) => {
             return alert("All data needed");
         }
         else {
-            const datas = { customeraddress, customername, customerlastname, customeremail, customerphone, customerneed, customerquantity, customersize, customerfrequency, customercost: service.servicecost }
+            const datas = { customeraddress, customername, customerlastname, customeremail, customerphone, customerneed, customerquantity, customersize, customerfrequency, customercost: service.servicecost, status: "pending" }
             console.log(datas);
             axios.post("/api/book", datas)
                 .then(res => {
                     console.log(res.data);
+                    form.reset();
                 })
         }
     }
@@ -149,8 +150,11 @@ const ServiceDetails = ({ id }) => {
                                         </div>
                                         <select name='customersize' defaultValue={"Select size"} className="input input-bordered w-full focus:outline-none rounded">
                                             <option disabled>Select size</option>
-                                            <option>Not sure</option>
-                                            <option>Commercial</option>
+                                            <option>I am not sure</option>
+                                            <option>Standard (96 Gallon - 7 bags)</option>
+                                            <option>Extra Small (18 Gallon - 1 bags)</option>
+                                            <option>Small (32 Gallon - 2 bags)</option>
+                                            <option>Medium (64 Gallon - 4 bags)</option>
                                         </select>
                                     </label>
                                     <label className="form-control w-full">
@@ -159,8 +163,11 @@ const ServiceDetails = ({ id }) => {
                                         </div>
                                         <select name='customerfrequency' defaultValue={"Select frequency"} className="input input-bordered w-full focus:outline-none rounded">
                                             <option disabled>Select frequency</option>
-                                            <option>Residel</option>
-                                            <option>Commeial</option>
+                                            <option>1x per week</option>
+                                            <option>2x per week</option>
+                                            <option>3x per week</option>
+                                            <option>Every other week</option>
+                                            <option>Other</option>
                                         </select>
                                     </label>
                                 </div>

@@ -11,6 +11,7 @@ import { usePathname } from 'next/navigation';
 import AdminNavbar from '@/components/Admin/AdminNavbar/AdminNavbar';
 import Logo from '@/components/Admin/Logo/Logo';
 import { TbBrandBooking } from "react-icons/tb";
+import { FaUsers } from "react-icons/fa";
 
 const AdminDashboardLayout = ({ children }) => {
 
@@ -64,6 +65,9 @@ const AdminDashboardLayout = ({ children }) => {
 
                             {/* Booking */}
                             <Link href={"/admin/userbooking"}><button className={`flex items-center gap-2 mb-2 hover:bg-[#181d24] w-full px-2 py-3 rounded-md ${path === "/admin/userbooking" ? "bg-[#181d24]" : ""}`}><TbBrandBooking></TbBrandBooking>User Booking</button></Link>
+
+                            {/* Users */}
+                            <Link href={"/admin/manageusers"}><button className={`flex items-center gap-2 mb-2 hover:bg-[#181d24] w-full px-2 py-3 rounded-md ${path === "/admin/manageusers" ? "bg-[#181d24]" : ""}`}><FaUsers></FaUsers>Manage Users</button></Link>
 
                         </div>
                         <div className="border-t-2 px-5 pt-5">

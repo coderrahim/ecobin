@@ -3,6 +3,7 @@ import moment from "moment";
 import Image from "next/image";
 import { FaRegEdit } from "react-icons/fa";
 import { RiDeleteBin3Fill } from "react-icons/ri";
+import { MdAssignmentAdd } from "react-icons/md";
 
 const getBookings = async () => {
     try {
@@ -20,7 +21,8 @@ const getBookings = async () => {
 
 const UBooking = async () => {
 
-    const { services } = await getBookings();
+    const { bookings: services } = await getBookings();
+    // console.log(services);
 
     return (
         <div>
@@ -38,15 +40,17 @@ const UBooking = async () => {
                                             <input type="checkbox" className="checkbox" />
                                         </label>
                                     </th>
-                                    <th>customer address</th>
                                     <th>customer name</th>
                                     <th>customer last name</th>
                                     <th>customer email</th>
                                     <th>customer phone</th>
+                                    <th>customer address</th>
                                     <th>customer need</th>
-                                    <th>customer quantity</th>
-                                    <th>customer size</th>
-                                    <th>customer frequency</th>
+                                    <th>quantity</th>
+                                    <th>size</th>
+                                    <th>frequency</th>
+                                    <th>status</th>
+                                    <th>assign</th>
                                     <th>Edit</th>
                                     <th>Delete</th>
                                 </tr>
@@ -76,38 +80,25 @@ const UBooking = async () => {
                                                     </div>
                                                 </div>
                                             </td> */}
-                                            <td>
-                                                {service.customeraddress}
-                                            </td>
                                             <td>{service.customername}</td>
                                             <td>{service.customerlastname}</td>
+                                            <td>{service.customeremail}</td>
+                                            <td>{service.customerphone}</td>
+                                            <td>{service.customeraddress}</td>
+                                            <td>{service.customerneed}</td>
+                                            <td>{service.customerquantity} </td>
+                                            <td>{service.customersize}</td>
+                                            <td>{service.customerfrequency}</td>
                                             <td>
-                                                {service.customeremail}
-                    
+                                                {
+                                                    service.status === "pending" ?
+                                                    <p className='bg-red-600 text-white px-2 py-[4px] rounded-full'>pending</p> :
+                                                    service.status === "assigned" ?
+                                                    <p>assigned</p> : <p>completed</p>
+                                                }
                                             </td>
                                             <td>
-                                                {service.customerphone}
-                    
-                                            </td>
-                                            <td>
-                                                {service.customerneed}
-                    
-                                            </td>
-                                            <td>
-                                                {service.customerquantity}
-                    
-                                            </td>
-                                            <td>
-                                                {service.customersize}
-                    
-                                            </td>
-                                            <td>
-                                                {service.customerfrequency}
-                    
-                                            </td>
-                                            <td>
-                                                {service.customerphone}
-                    
+                                                <button className='flex items-center gap-1 text-white px-2 py-1 bg-green-600 rounded-full'><MdAssignmentAdd className="text-xl"></MdAssignmentAdd>Assign</button>
                                             </td>
                                             <td>
                                                 <button><FaRegEdit className="text-orange-600 text-xl"></FaRegEdit></button>

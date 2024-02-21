@@ -4,10 +4,10 @@ import { NextResponse } from "next/server";
 
 export const POST = async (request) => {
     await connectDB();
-    const { customeraddress, customername, customerlastname, customeremail, customerphone, customerneed, customerquantity, customersize, customerfrequency, customercost } = await request.json();
-    console.log("fsfaf", customeraddress, customername, customerlastname, customeremail, customerphone, customerneed, customerquantity, customersize, customerfrequency, customercost);
+    const { customeraddress, customername, customerlastname, customeremail, customerphone, customerneed, customerquantity, customersize, customerfrequency, customercost, status } = await request.json();
+    console.log("fsfaf", customeraddress, customername, customerlastname, customeremail, customerphone, customerneed, customerquantity, customersize, customerfrequency, customercost, status);
     try {
-        await Booking.create({ customeraddress, customername, customerlastname, customeremail, customerphone, customerneed, customerquantity, customersize, customerfrequency, customercost });
+        await Booking.create({ customeraddress, customername, customerlastname, customeremail, customerphone, customerneed, customerquantity, customersize, customerfrequency, customercost, status });
         return NextResponse.json({ message: "dasd" })
     } catch (error) {
         return NextResponse.json({ message: "booking failed" }, { status: 500 })
