@@ -3,6 +3,7 @@ import GallaryImages from "@/Components/GallaryImages/GallaryImages";
 import LiveChat from "@/Components/LiveChat/LiveChat";
 import Contact from "@/components/Contact/Contact";
 import OurClients from "@/components/OurClients/OurClients";
+import Pickup from "@/components/Pickup/Pickup";
 import Statistics from "@/components/Statistics/Statistics";
 import WhyChoose from "@/components/WhyChoose/WhyChoose";
 
@@ -19,6 +20,7 @@ const HomePage = () => {
             <Contact></Contact>
             <Statistics></Statistics>
             <GallaryImages></GallaryImages>
+            <Pickup></Pickup>
             <OurClients></OurClients>
             <LiveChat></LiveChat>
 
